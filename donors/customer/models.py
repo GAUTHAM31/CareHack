@@ -23,6 +23,7 @@ class donor(models.Model):
 	otp=models.IntegerField(default=0)
 	otpdate=models.DateTimeField(null=True)
 	verify=models.BooleanField(default=False)
+	times=models.IntegerField(default=0,null=True)
 	#img= models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, **options)
 	
 class companies(models.Model):
@@ -34,7 +35,13 @@ class coupon(models.Model):
 	credits=models.IntegerField(default=0)
 	companies=models.ForeignKey(companies, on_delete=models.CASCADE)
 	details=models.CharField(max_length=180)	
-	used=models.BooleanField(default=True)
+	used=models.BooleanField(default=False)
 	companycredid=models.CharField(max_length=200,default="----")
-	donor=models.ForeignKey(donor, on_delete=models.CASCADE)
+	donor=models.ForeignKey(donor, on_delete=models.CASCADE, null=True)
+class requests(models.Model):
+	rid=models.UUIDField(primary_key=True,default=uuid.uuid4, editable=False)	
+	blood_list=(('1','A+'),('2','A-'),('3','B+'),('4','B-'),('5','AB+'),('6','AB-'),('7','O+'),('8','O-'))
+	blood_type=models.CharField(max_length=5,choices=blood_list,default='1')
+	location=models.CharField(max_length=20)
+	
 # Create your models here.

@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render,redirect
 
-from customer.models import donor
+from customer.models import donor,coupon,requests
 from django.contrib.auth import authenticate, login
 from django.template import RequestContext
 from django.contrib.auth.models import User
@@ -52,7 +52,25 @@ def logina(request):
 
 @login_required
 def home(request):
+	d=donor.objects.get(user=request.user)
+	c = coupon.objects.filter(donor=d,used=False)
+	r = requests.objects.filter(blood_type=d.blood_type)
+	#uncomment for interfacing.
+	#return render(request,'add html',{'credits':d.credits,'times':d.times,'uccount':c.count(),'rcount':r.count()})
 	return HttpResponse("welcome")# render(request,'home.html',{})
+
+def donreqs(request):
+	d=donor.objects.get(user=request.user)
+	c = coupon.objects.filter(donor=d,used=False)
+	r = list(requests.objects.filter(blood_type=d.blood_type))
+	return render(request,'add html',{'rlist':r})
+
+def sendlist(request):
+	d=donor.objects.get(user=request.user)
+	cu = list(coupon.objects.filter(donor=d,used=False))
+	cb = list(coupon.objects.filter(donor=null))
+	return render(request,'add html',{'coupons':cu,'credits':d.credits,'cbuy':cb})
+	
 
 
 

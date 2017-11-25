@@ -1,2 +1,2 @@
 # CareHack
-A patient booking app
+Reward for donors

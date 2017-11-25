@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^login', views.logina),
     url(r'^home', views.home),
+    url(r'^otpverify', views.otpverify),
 	url(r'^register', views.register),
 
     url(r'^admin/', admin.site.urls),

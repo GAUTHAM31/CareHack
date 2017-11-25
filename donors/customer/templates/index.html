@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -8,7 +9,7 @@
   
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'>
 
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   
 </head>
@@ -42,7 +43,8 @@
           <div class="user-card round5">
 	<div class="login-box">
 		<form class="login-form" name="login" action="/login/" method="post">
-			<input type="text" name="username" class="username" placeholder="username" />
+    {% csrf_token %}
+			<input type="text" name="phno" class="username" placeholder="username" />
 			<input type="password" name="password" class="password" placeholder="password" />
 			<input type="submit" name="login" value="Login" class="login" />
 		</form>
@@ -59,24 +61,25 @@
 		</a>
 	</div>
 	<div class="signup-box">
-		<form class="signup-form" name="signup" action="/signup/" method="post">
+		<form class="signup-form" name="signup" action="/register/" method="post">
+    {% csrf_token %}
             <input type="text" name="fname" class="fname" placeholder="First Name" />
 			<input type="text" name="lname" class="lname" placeholder="Last Name" />
-			<input type="number" name="mobile" class="mobile" placeholder="Mobile No" />
+			<input type="number" name="phno" class="mobile" placeholder="Mobile No" />
             <label class="bloodGroup">
-            <select name="bloodGroup">
+            <select name="bg">
               <option value="" disabled selected>Select blood group</option>
-              <option value="A+">A+</option>
-              <option value="A-">A-</option>
-              <option value="B+">B+</option>
-              <option value="B-">B-</option>
-              <option value="AB+">AB+</option>
-              <option value="AB-">AB-</option>
-              <option value="O+">O+</option>
-              <option value="O-">O-</option>
+              <option value="1">A+</option>
+              <option value="2">A-</option>
+              <option value="3">B+</option>
+              <option value="4">B-</option>
+              <option value="5">AB+</option>
+              <option value="6">AB-</option>
+              <option value="7">O+</option>
+              <option value="8">O-</option>
             </select>
             </label>
-            <input type="number" name="dob" class="dob" placeholder="Age">
+            <input type="number" name="age" class="dob" placeholder="Age">
 			<input type="password" name="password" class="password" placeholder="password" />
 			<input type="submit" name="signup" value="Signup" class="signup" />
 		</form>
@@ -101,7 +104,7 @@
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js'></script>
 
-    <script  src="js/index.js"></script>
+    <script  src="{% static 'js/index.js' %}"></script>
 
 </body>
 </html>

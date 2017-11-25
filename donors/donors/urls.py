@@ -18,7 +18,12 @@ from django.contrib import admin
 from customer import views
 
 urlpatterns = [
-    url(r'^donors/', include('customer.urls')),
+    url(r'^customers/', include('customer.urls')),
+    url(r'^$', views.index),
+    url(r'^login', views.logina),
+    url(r'^home', views.home),
+	url(r'^register', views.register),
+
     url(r'^admin/', admin.site.urls),
 ]
 

@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Otp verify</title>
+  <title>Verify Mobile Number</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Open+Sans" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
   .bg-1 { 
-      background-color: #d83d3d;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      height: 50%;
+      background-color: #282931;
       color: #000000;
   }
   .bg-2 { 
@@ -27,53 +36,36 @@
   border-bottom: 2px solid #d8d8d8;
   padding-bottom: 1%;
   padding-top: 1%;
-  background-color: #d83d3d;
+  background-color: #282931;
 }
 input:focus {
   border-color: #510d05;
   outline: 0;
 }
 body {
-  background: #d83d3d;
+  background: #282931;
+}
+
+h3 {
+  font-family: 'Open Sans', sans-serif;
+  color:white ;
+  padding-bottom: 30px;
 }
  
   </style>
 </head>
 <body>
 
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">CareHack</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Signin</a></li>
-        <li><a href="#">Sign up</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
 <div class="container-fluid bg-1 text-center">
-  <h3>Verify OTP?</h3>
-  <img src="https://www.iconfinder.com/data/icons/luchesa-part-3/128/SMS-512.png" class="img-responsive img-circle" style="display:inline" alt="Bird" width="350" height="350"><br><br>
+  <h3>Verify your mobile number</h3>
+  <img src="https://www.iconfinder.com/data/icons/luchesa-part-3/128/SMS-512.png" class="img-responsive img-circle" style="display:inline" alt="Bird" width="150" height="150"><br><br>
  <form class="edit" method="post" action="/otpverify/">
 {% csrf_token %}
 <input type="hidden" name="phno"  value="{{phno}}" />
-<input type="number" name="otp"  placeholder="XXXX" /><br><br>
+<input type="number" name="otp"  placeholder="xxxx" /><br><br>
 <button class="btn btn-default">Send</button>
 </form>
 </div>
-
-
-
-
-
 </body>
 </html>

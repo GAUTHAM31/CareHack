@@ -1,2 +1,2 @@
 # CareHack
-A patient booking app
+An incentive based blood donation app.

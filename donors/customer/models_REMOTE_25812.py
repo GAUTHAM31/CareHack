@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-<<<<<<< HEAD
-
-from django.db import models
-
-=======
 from django.contrib.auth.models import User
 from django.db import models
 import uuid
@@ -49,5 +44,4 @@ class requests(models.Model):
 	blood_type=models.CharField(max_length=5,choices=blood_list,default='1')
 	location=models.CharField(max_length=20)
 	
->>>>>>> d156a1b3ebd650889ea8873e90e0f15060933ccd
 # Create your models here.

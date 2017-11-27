@@ -25,18 +25,30 @@ SECRET_KEY = '83233shpnt14x^7#y*d_e#=&74==n#(y^9045p@3p$ns6lxxz3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = []
+=======
+ALLOWED_HOSTS = ['13.126.221.17']
+>>>>>>> d156a1b3ebd650889ea8873e90e0f15060933ccd
 
 
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
+=======
+	
+>>>>>>> d156a1b3ebd650889ea8873e90e0f15060933ccd
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
+=======
+    'customer',
+>>>>>>> d156a1b3ebd650889ea8873e90e0f15060933ccd
 ]
 
 MIDDLEWARE = [
@@ -118,3 +130,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+<<<<<<< HEAD
+=======
+STATICFILES_DIRS = [
+    "/home/ubuntu/CareHack/donors/static",
+    ]
+MEDIA_URL = '/media/'
+#MEDIA_ROOT = 'home/ubuntu/CareHack/donors/static/media'
+#STATIC_ROOT = os.path.join(BASE_DIR, "static")
+>>>>>>> d156a1b3ebd650889ea8873e90e0f15060933ccd

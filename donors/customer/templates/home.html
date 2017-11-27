@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Blood Donor</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+      <link rel="stylesheet" href="css/home-style.css">
+
+  
+</head>
+
+<body>
+  <!--
+  Please note: this code is in no way ready to be used as is in production on your website. It will need to be adapted to be cross browser compliant & accessible. I just wanted to share how one might go about this effect with CSS & JS and no other dependencies
+-->
+<header>
+  <div class="navbar">
+    <ul class="nav">
+      <li class="item">
+        <a href="#" class="contact">logout</a>
+      </li>
+    </ul>
+
+    <div class="logo">
+      <img src="#">
+    </div>
+  </div>
+</header>
+
+<div class="contain">
+  <div class="stats row">
+    <div style="width: 50%; float:left">
+      <h2>You have</h2>
+      <h1>420</h1>
+      <h2>credits</h2>
+    </div>
+    <div style="width: 50%; float:right">
+      <h2>You donated</h2>
+      <h1>4</h1>
+      <h2>times</h2>
+    </div>
+  </div>
+  <div class="card-column column-0">
+    <div class="card donate">
+      <div class="border"></div>
+      <h1>There are 38 donation centres near you.</h1>
+      <p>Donate now</p>
+    </div>
+    <div class="card store">
+      <div class="border"></div>
+      <h1>Use you credits to buy coupons.</h1>
+      <p>Coupon store</p>
+    </div>
+    <div class="card redeem">
+      <div class="border"></div>
+      <h1>You have 4 unredeemed coupons.</h1>
+      <p>Redeem coupons</p>
+    </div>
+    <div class="card claim">
+      <div class="border"></div>
+      <h1>Donated blood? Claim your credits now.</h1>
+      <p>Claim</p>
+    </div>
+  </div>
+</div>
+
+<div id="cover" class="cover"></div>
+
+<div id="open-content" class="open-content">
+  <a href="#" id="close-content" class="close-content"><span class="x-1"></span><span class="x-2"></span></a>
+  <div class="row" id="open-content-data">
+  </div>
+</div>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script  src="js/home-index.js"></script>
+
+</body>
+</html>
